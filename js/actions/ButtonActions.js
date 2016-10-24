@@ -1,8 +1,5 @@
 import AppDispatcher from '../dispatcher/AppDispatcher'
-
-export const ADD_ITEM = 'ADD_ITEM'
-export const REMOVE_ITEM = 'REMOVE_ITEM'
-export const CLEAR_ITEMS = 'CLEAR_ITEMS'
+import { ADD_ITEM, REMOVE_ITEM, CLEAR_ITEMS } from './ActionTypes'
 
 const ButtonActions = {
   addItem(item) {
