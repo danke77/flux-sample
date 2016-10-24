@@ -7,6 +7,9 @@
     "test": "jest"
   },
   "dependencies": {
+    "events": "^1.1.1",
+    "flux": "^3.1.0",
+    "object-assign": "^4.1.0",
     "react": "15.3.2",
     "react-native": "0.35.0"
   },
