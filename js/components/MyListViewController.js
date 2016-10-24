@@ -34,7 +34,16 @@ export default class MyListViewController extends Component {
   }
 
   _onRemoveItemClick() {
-    ButtonActions.removeItem()
+    if(ListStore.getAll().length) {
+      ButtonActions.removeItem()
+    }
+    else {
+      alert('The list is empty!')
+    }
+  }
+
+  _onClearItemsClick() {
+    ButtonActions.clearItems()
   }
 
   render() {
@@ -42,7 +51,8 @@ export default class MyListViewController extends Component {
       <MyListView
         items={this.state.items}
         addItemClickFunc={this._onAddItemClick}
-        removeItemClickFunc={this._onRemoveItemClick}/>
+        removeItemClickFunc={this._onRemoveItemClick}
+        clearItemsClickFunc={this._onClearItemsClick}/>
     )
   }
 }

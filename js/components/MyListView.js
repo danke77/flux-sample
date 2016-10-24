@@ -11,7 +11,8 @@ export default class extends Component {
   static propTypes = {
     items: PropTypes.array,
     addItemClickFunc: PropTypes.func,
-    removeItemClickFunc: PropTypes.func
+    removeItemClickFunc: PropTypes.func,
+    clearItemsClickFunc: PropTypes.func
   }
 
   static defaultProps = {
@@ -24,6 +25,7 @@ export default class extends Component {
         <View>
           <Text style={styles.add} onPress={this.props.addItemClickFunc}>Click me to Add!</Text>
           <Text style={styles.remove} onPress={this.props.removeItemClickFunc}>Click me to Remove!</Text>
+          <Text style={styles.remove} onPress={this.props.clearItemsClickFunc}>Click me to Clear!</Text>
           {
             this.props.items.map((item, index) =>
               <Text key={index} style={styles.item}>{index}: {item}</Text>

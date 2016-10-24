@@ -1,6 +1,6 @@
 import { Dispatcher } from 'flux'
 import ListStore from '../stores/ListStore'
-import { ButtonActions, ADD_ITEM, REMOVE_ITEM } from '../actions/ButtonActions'
+import { ButtonActions, ADD_ITEM, REMOVE_ITEM, CLEAR_ITEMS } from '../actions/ButtonActions'
 
 const AppDispatcher = new Dispatcher()
 
@@ -12,6 +12,10 @@ AppDispatcher.register((action) => {
       break
     case REMOVE_ITEM:
       ListStore.removeItem()
+      ListStore.emitChange()
+      break
+    case CLEAR_ITEMS:
+      ListStore.clearItems()
       ListStore.emitChange()
       break
     default:

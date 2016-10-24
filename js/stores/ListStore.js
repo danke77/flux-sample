@@ -17,6 +17,10 @@ const ListStore = assign({}, EventEmitter.prototype,
       this.items.pop()
     },
 
+    clearItems() {
+      this.items = []
+    },
+
     emitChange() {
       this.emit('change')
     },
