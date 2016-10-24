@@ -6,21 +6,19 @@ import ButtonActions from '../actions/ButtonActions'
 
 export default class MyListViewController extends Component {
 
-  state = {
-    items: ListStore.getAll()
-  }
-
   constructor(props) {
     super(props)
-    this.onListChange = this._onListChange.bind(this)
+    this.state = {
+      items: ListStore.getAll()
+    }
   }
 
   componentDidMount() {
-    ListStore.addChangeListener(this.onListChange)
+    ListStore.addChangeListener(this._onListChange.bind(this))
   }
 
   componentWillUnmount() {
-    ListStore.removeChangeListener(this.onListChange)
+    ListStore.removeChangeListener(this._onListChange.bind(this))
   }
 
   _onListChange() {
