@@ -6,7 +6,7 @@ import {
   Text
 } from 'react-native'
 
-export default class extends Component {
+export default class MyListView extends Component {
 
   static propTypes = {
     items: PropTypes.array,
