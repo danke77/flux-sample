@@ -1,23 +1,23 @@
 import AppDispatcher from '../dispatcher/AppDispatcher'
-import { ADD_ITEM, REMOVE_ITEM, CLEAR_ITEMS } from './ActionTypes'
+import * as ActionTypes from './ActionTypes'
 
 const ButtonActions = {
   addItem(item) {
     AppDispatcher.dispatch({
-      actionType: ADD_ITEM,
+      actionType: ActionTypes.ADD_ITEM,
       actionItem: item
     })
   },
 
   removeItem() {
     AppDispatcher.dispatch({
-      actionType: REMOVE_ITEM
+      actionType: ActionTypes.REMOVE_ITEM
     })
   },
 
   clearItems() {
     AppDispatcher.dispatch({
-      actionType: CLEAR_ITEMS
+      actionType: ActionTypes.CLEAR_ITEMS
     })
   }
 }
